@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pl">
+    <head>
+        {% include head.html %}
+    </head>
+    
+    <body>
+        {% include header.html %}
+
+        <div class="container">
+        {% if page.category %}
+            {% assign category = page.category | slugify: "latin" %}
+            {% assign events = site.events | where: "category", category  %}
+        {% else %}
+            {% assign events = site.events %}
+        {% endif %}
+
+        
+        {% for item in events %}
+            <p><a href="{{ item.url }}.html">{{ item.title }}</a></p>
+        {% endfor %}
+        </div>
+        {% include footer.html %}
+    </body>
+</html>
