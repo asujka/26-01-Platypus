@@ -1,0 +1,46 @@
+---
+layout: page
+title: Platypus EN
+description: Opis strony
+lang: en
+permalink: /
+---
+
+
+<section id="title" class="mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Czysty Jekyll<br>
+                    <small class="text-body-secondary">przykłady uycia pluginy jekyll_picture_tag wraz z szablonami TEST</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="photo" class="mb-3">
+    <div class="container">
+        <h2>Pojedycze zdjęcie (szablon: template2)</h2>
+        <div class="row">
+            <div class="col-12">
+                {% picture template2 test.jpg class="img-thumbnail mg-fluid rounded" alt="Przykładowe zdjęcie" %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery" class="mb-3">
+    <div class="container">
+        <h2>Galeria (szablon: template1)</h2>
+        <div class="row g-4">
+            {% for i in (1..10) %}
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card shadow-sm">
+                    {% picture template1 test.jpg class="img-thumbnail mg-fluid rounded" alt="Gallery item {{ i }}" %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

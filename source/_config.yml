@@ -12,12 +12,20 @@ github_username:  jekyll
 # Build settings
 theme: minima
 plugins:
+  - jekyll-polyglot
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate-v2
   - jekyll_picture_tag
-  
+
+
+languages: ["pl", "en"]
+default_lang: "pl"
+lang_from_path: true
+parallel_localization: true
+exclude_from_localization: ["javascript", "images", "css", "public", "sitemap", "CNAME", "assets"]
+
 sass:
   sass_dir: _sass
 
@@ -30,12 +38,3 @@ exclude:
 picture:
   source: "assets/images/_fullsize"     # skąd brać obrazy-oryginały
   output: "assets/images/generated"     # dokąd zapisywać wersje wynikowe
-
-
-collections:
-  news:
-    output: true
-    permalink: /aktualnosci/:path
-  events:
-    output: true
-    permalink: /wydarzenia/:path

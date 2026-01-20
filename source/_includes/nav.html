@@ -1,0 +1,85 @@
+
+
+
+<!--
+<div class="container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="{{ '/index.html' | relative_url }}">Strona główna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="{{ '/aktualnosci.html' | relative_url }}">Aktualności</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="{{ '/o-kongresie.html' | relative_url }}">O Kongresie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="{{ '/rejestracja.html' | relative_url }}">Rejestracja</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="{{ '/program.html' | relative_url }}">Program</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="{{ '/panelisci.html' | relative_url }}">Paneliści</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="{{ '/rada-programowa.html' | relative_url }}">Rada programowa</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Wydarzenia towarzyszące</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/' | relative_url }}">Wszystkie</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/dolnoslaskie.html' | relative_url }}">Dolnośląska Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/kujawsko-pomorskie.html' | relative_url }}">Kujawsko-Pomorska Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/lubelskie.html' | relative_url }}">Lubelska Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/lubuskie.html' | relative_url }}">Lubuska Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/lodzkie.html' | relative_url }}">Łódzka Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/malopolskie.html' | relative_url }}">Małopolska Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/mazowieckie.html' | relative_url }}">Mazowiecka Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/opolskie.html' | relative_url }}">Opolska Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/podkarpackie.html' | relative_url }}">Podkarpacka Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/podlaskie.html' | relative_url }}">Podlaska Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/pomorskie.html' | relative_url }}">Pomorska Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/slaskie.html' | relative_url }}">Śląska Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/swietokrzyskie.html' | relative_url }}">Świętokrzyska Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/warminsko-mazurskie.html' | relative_url }}">Warmińsko-Mazurska Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/wielkopolskie.html' | relative_url }}">Wielkopolska Okręgowa IARP</a></li>
+                        <li><a class="dropdown-item" href="{{ '/wydarzenia/zachodniopomorskie.html' | relative_url }}">Zachodniopomorska Okręgowa IARP</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="{{ '/wspolpraca.html' | relative_url }}">Współpraca partnerska</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+-->
+
+<nav>
+  <ul>
+    {% assign nav_items = site.data.nav[site.active_lang] %}
+    {% for item in nav_items %}
+      <li>
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<div class="lang-switch">
+  {% for lang in site.languages %}
+    <a href="{{ site.baseurl }}/{{ lang }}{{ page.url }}" 
+       class="{% if lang == site.active_lang %}active{% endif %}">
+      {{ lang | upcase }}
+    </a>
+  {% endfor %}
+</div>
+
+<div class="container"><h1>{{ page.title }}</h1></div>

@@ -1,5 +1,6 @@
-# Startowy projekt Jekyll
-Startowy projekt Jekyll do użycia jako poczatek nowego projektu. Uruchamiany jako obraz dockera. 
+# platypus.pl 
+Strona www dla Platypus na 2026 
+Dodana współpraca z Pixilab 
 Zainstalwoane komponenty:
 * [jQuery 3.7.1](https://jquery.com/)
 * [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/) jako sass
